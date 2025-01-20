@@ -14,7 +14,7 @@ def index(request: Request):
     return templates.TemplateResponse("index.html", context)
 
 
-@app.post("/scrape")
+@app.get("/scrape")
 def scrape(url: str):
 
     response = requests.get(url)
