@@ -30,12 +30,10 @@ ScrapeNest is your go-to solution for building automated web scrapers with minim
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/AkiTheMemeGod/ScrapeNest.git
-   
   
 2. Navigate to the project directory:
-  ```bash
-  cd ScrapeNest
-  ```
+   ```bash 
+   cd ScrapeNest
 3. Install the dependencies:
    ```bash
    pip install -r requirements.txt  
