@@ -1,13 +1,21 @@
-from fastapi import FastAPI
+import requests
 
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+    context = {'request': request}
+    return templates.TemplateResponse("index.html", context)
+
+
+@app.post("/scrape")
+def scrape(url: str):
+
+    response = requests.get(url)
+    return response.text
