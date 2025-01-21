@@ -1,8 +1,6 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 import httpx
-
-from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
